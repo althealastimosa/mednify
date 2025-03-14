@@ -1,0 +1,14 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/node:23.9.0
+    steps:
+      - checkout
+      - run:
+          name: Check Node Version
+          command: node --version
+workflows:
+  build_workflow:
+    jobs:
+      - build
